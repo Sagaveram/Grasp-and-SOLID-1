@@ -34,5 +34,17 @@ namespace Full_GRASP_And_SOLID.Library
                     $"usando '{step.Equipment.Description}' durante {step.Time}");
             }
         }
+        public double GetProductionCost()
+        {
+            double stepCounter=0;
+            foreach (Step step in this.steps)
+            {
+                stepCounter=stepCounter+step.GetStepcost();
+                
+            }
+            return stepCounter;
+        }
+        /*El principio que utilice para seleccionar la clase Recipe es el método Expert ya que en esta clase se encuentra se encuentra
+        la clase step, y considero que es la indicada para realizar los cálculos para obtener el costo total con todos los pasos*/
     }
 }
